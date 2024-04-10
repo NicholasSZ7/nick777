@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pergunta Sim ou Não</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    #pergunta {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+    #container-botao {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative; /* adicionado */
+    }
+    .botao {
+      padding: 10px 20px;
+      font-size: 18px;
+      margin: 0 10px;
+      cursor: pointer;
+      position: absolute; /* alterado */
+    }
+  </style>
+</head>
+<body>
+  <h1 id="pergunta">O lucas ainda sofre pela eduarda?</h1>
+  <div id="container-botao">
+    <button class="botao" id="botao-sim" onclick="resposta('sim')">Sim</button>
+    <button class="botao" id="botao-nao" onmouseover="moverBotao()">Não</button>
+  </div>
+
+  <script>
+    function resposta(resposta) {
+      if (resposta === 'sim') {
+        alert("kkkkkkkkkk!");
+      }
+    }
+
+    function moverBotao() {
+      let botaoNao = document.getElementById('botao-nao');
+      let containerWidth = document.getElementById('container-botao').offsetWidth;
+      let containerHeight = document.getElementById('container-botao').offsetHeight;
+      
+      let newX = Math.floor(Math.random() * (containerWidth - botaoNao.offsetWidth));
+      let newY = Math.floor(Math.random() * (containerHeight - botaoNao.offsetHeight));
+
+      botaoNao.style.left = newX + 'px';
+      botaoNao.style.top = newY + 'px';
+    }
+  </script>
+</body>
+</html>
